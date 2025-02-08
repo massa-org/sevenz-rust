@@ -347,6 +347,10 @@ impl<W: Write + Seek> SevenZWriter<W> {
         let mut encoder: Box<dyn Write> = Box::new(out);
         let mut first = true;
         for mc in methods.iter() {
+            if mc.method.id() == SevenZMethod::ID_COPY {
+                continue;
+            }
+            
             if !first {
                 let counting = CountingWriter::new(encoder);
                 more_sized.push(counting.counting());
