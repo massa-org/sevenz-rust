@@ -82,7 +82,7 @@ version = "0.1.7"
 default-features = false
 
 [dependencies.nt-time]
-version = "0.8.0"
+version = "0.10.6"
 
 [dependencies.rand]
 version = "0.8"
